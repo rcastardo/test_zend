@@ -4,8 +4,6 @@ README.txt
 demos/
 extras/documentation
 nbproject
-library/Zend
 .zfproject.xml
-tests
-Zend/
-/library
+.idea
+library/Zend

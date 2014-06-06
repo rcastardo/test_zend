@@ -1,0 +1,9 @@
+<p>Olá Zend!</p>
+
+Faça um teste acessando http://localhost/agenda/public/. Confira que o texto “Olá Zend!” da template index/index.phtml aparece dentro do seu layout como se fizesse parte dele.
+
+Para confirmar isso, vamos criar a controladora “Sobre”:
+
+$ zf create controller Sobre
+
+Esse comando criará os arquivos “agenda/application/controllers/SobreController.php” e “agenda/application/views/scripts/sobre/index.phtml”, volte para o seu navegador e clique no menu “Sobre” do projeto Agenda, deve aparecer a mensagem “View script for controller Sobre and script/action name index”, que é o conteúdo que foi criado automaticamente, para alterar basta editar a template “sobre/index.phtml” nas Views.
