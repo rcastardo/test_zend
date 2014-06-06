@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <?php
-    $this->headTitle()->append('Layout e módulos - Zend Framework');
+    $this->headTitle()->append('Zend Framework');
     $this->headTitle()->setSeparator(' - ');
     echo $this->headTitle(),PHP_EOL;
     $this->headMeta()->headMeta ('Recinaldo Castardo', 'author');
 
     $this->headLink()->setSeparator(PHP_EOL)
-        ->prependStylesheet($this->baseUrl('estilos/estilo.css'));
+        ->prependStylesheet($this->baseUrl('css/stylesheet.css'));
 
     $this->headScript ()->setSeparator(PHP_EOL)
         ->prependFile ($this->baseUrl('scripts/jquery/jquery-1.6.1.min.js') );

@@ -2,22 +2,32 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
-    protected function _initConfig()
+    public function _initConfig()
     {
-        $config = new Zend_Config($this->getOptions(), true);
+        $config = new Zend_Config($this->getApplication()->getOptions(), true);
         Zend_Registry::set('config', $config);
         return $config;
     }
 
-    protected function _initDatabase()
+    public function _initSession()
     {
+        $session = new Zend_Session_Namespace('Blog');
+        Zend_Registry::set('session', $session);
+    }
+
+    protected function _initDB()
+    {
+        $db = $this->getPluginResource('db')->getDbAdapter();
+        Zend_Db_Table::setDefaultAdapter($db);
+        Zend_Registry::set('db', $db);
+        /*
         // get config from config/application.ini
         $config = $this->getOptions();
         $db = Zend_Db::factory($config['resources']['db']['adapter'], $config['resources']['db']['params']);
         //set default adapter
         Zend_Db_Table::setDefaultAdapter($db);
         //save Db in registry for later use
-        Zend_Registry::set("db", $db);
+        Zend_Registry::set('db', $db);*/
     }
 
     protected function _initZFDebug()
