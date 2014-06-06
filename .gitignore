@@ -1,9 +1,9 @@
 INSTALL.txt
 LICENSE.txt
 README.txt
-demos/
+/demos
+/tests
 extras/documentation
 nbproject
-.zfproject.xml
 .idea
 library/Zend
