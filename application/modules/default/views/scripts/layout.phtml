@@ -1,30 +1,53 @@
-<?php echo $this->doctype()?>
-<html lang="pt-br">
+<?php echo $this->doctype(); ?>
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <?php
     $this->headTitle()->append('Zend Framework');
     $this->headTitle()->setSeparator(' - ');
-    echo $this->headTitle(),PHP_EOL;
-    $this->headMeta()->headMeta('Reginaldo Castardo', 'author');
-
-    $this->headLink()->setSeparator(PHP_EOL)
-        ->prependStylesheet($this->baseUrl('css/stylesheet.css'));
-
-    $this->headScript()->setSeparator(PHP_EOL)
-        ->prependFile($this->baseUrl('scripts/jquery/jquery-1.6.1.min.js') );
-
-    echo $this->headMeta(),PHP_EOL;
-    echo $this->headLink(),PHP_EOL;
-    echo $this->headScript();
+    echo $this->headTitle();
+    echo $this->headMeta('Reginaldo Castardo', 'author'),PHP_EOL;;
+    //Bootstrap
+    echo $this->headLink()->prependStylesheet($this->baseUrl('/assets/bootstrap/css/bootstrap.css')),PHP_EOL;;
+    //echo $this->headScript()->prependFile($this->baseUrl('scripts/jquery/jquery-1.6.1.min.js')),PHP_EOL;;
     ?>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- [if lt IE 9] -->
+    <?php echo $this->headScript()->prependFile('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'),PHP_EOL; ?>
+    <?php echo $this->headScript()->prependFile('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js'),PHP_EOL; ?>
+    <!-- [endif] -->
+
+    <!-- custom.css-->
+    <?php echo $this->headLink()->appendStylesheet('/assets/css/custom.css') ?>
+
+
 </head>
 <body>
-<div id="wrapper">
-    <div id="content">
-        <h1>Modulo default</h1>
-        <?php echo $this->layout()->content;?>
-    </div><!-- /content -->
-</div><!-- /wrapper -->
+<!--<div id="header" style="background-color: #EEEEEE; height: 30px;">-->
+<!--    <div id="header-logo" style="float: left">-->
+<!--        <b>ZF Quickstart Application</b>-->
+<!--    </div>-->
+<!--    <div id="header-navigation" style="float: right">-->
+<!--        <a href="--><?php //echo $this->url(array('controller'=>'guestbook'), 'default', true) ?><!--">Guestbook</a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<?php echo $this->layout()->content; ?>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<?php echo $this->inlineScript()->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') ?>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<?php echo $this->inlineScript()->prependFile('/assets/bootstrap/js/bootstrap.js') ?>
+<!-- custom.js -->
+<?php echo $this->inlineScript()->prependFile('/assets/js/custom.js') ?>
+
+
+
 </body>
 </html>
