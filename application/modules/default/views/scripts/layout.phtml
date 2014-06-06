@@ -6,13 +6,13 @@
     $this->headTitle()->append('Zend Framework');
     $this->headTitle()->setSeparator(' - ');
     echo $this->headTitle(),PHP_EOL;
-    $this->headMeta()->headMeta ('Reginaldo Castardo', 'author');
+    $this->headMeta()->headMeta('Reginaldo Castardo', 'author');
 
     $this->headLink()->setSeparator(PHP_EOL)
         ->prependStylesheet($this->baseUrl('css/stylesheet.css'));
 
-    $this->headScript ()->setSeparator(PHP_EOL)
-        ->prependFile ($this->baseUrl('scripts/jquery/jquery-1.6.1.min.js') );
+    $this->headScript()->setSeparator(PHP_EOL)
+        ->prependFile($this->baseUrl('scripts/jquery/jquery-1.6.1.min.js') );
 
     echo $this->headMeta(),PHP_EOL;
     echo $this->headLink(),PHP_EOL;
