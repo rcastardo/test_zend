@@ -2,14 +2,26 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
-    public function _initConfig()
+    protected function _initAutoloader()
+    {
+        $autoloader = new Zend_Application_Module_Autoloader(array(
+            'namespace' => 'Application',
+            'basePath' => dirname(__FILE__),
+        ));
+        echo '<pre>';
+        print_r($autoloader);
+        echo '</pre>';
+        return $autoloader;
+    }
+
+    protected function _initConfig()
     {
         $config = new Zend_Config($this->getApplication()->getOptions(), true);
         Zend_Registry::set('config', $config);
         return $config;
     }
 
-    public function _initSession()
+    protected function _initSession()
     {
         $session = new Zend_Session_Namespace('System');
         Zend_Registry::set('session', $session);
